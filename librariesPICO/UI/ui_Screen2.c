@@ -360,10 +360,40 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_width(ui_Label10, LV_SIZE_CONTENT);  /// 1
     lv_obj_set_height(ui_Label10, LV_SIZE_CONTENT); /// 1
     lv_obj_set_align(ui_Label10, LV_ALIGN_CENTER);
-    // 设置课程标题
+    // Set the course title
+/*The course title needs to be modified before compiling the course.*/
+/*The following are the titles of each course:
+L1_LED_control
+L2_Button_Control_LED
+L3_Breathing_LED
+L4_2.4_inch_TFT_display
+L5_Traffic_light
+L6_Intelligent_street
+L7_Ultrasonic_ranging
+L8_Obstacle_close_range
+L9_Brightness_display
+L10_Temperature_Humidity
+L11_Servo_control
+L12_IR_control_LED
+L13_Weather_reminder
+L14_Servo_angle_control
+L15_Polite_automatic_door
+L16_Sound_Reminder
+L17_Calculation_of_acceleration
+L18_Smart_corridor_light
+L19_simple_calculator
+L20_Hall_counter
+L21_smoke_alarm
+
+After selecting a course, replace it with the second parameter of the lv_label_set_text() function.
+The following uses Lesson 17 as an example.
+
+If the course title is not fully displayed, modify the second parameter of the lv_obj_set_x() function. This parameter means taking 0 as the center point.
+The smaller the number, the more to the left the title will be. Conversely, the larger the number, the more to the right it will be.
+*/
     lv_obj_set_x(ui_Label10, -40);
     lv_obj_set_y(ui_Label10, 0);
-    lv_label_set_text(ui_Label10, "L14_Servo_angle_control");
+    lv_label_set_text(ui_Label10, "L17_Calculation_of_acceleration");
     lv_obj_set_style_text_color(ui_Label10, lv_color_hex(0x0F7E2F), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label10, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
@@ -379,7 +409,7 @@ void ui_Screen2_screen_init(void)
 
     lv_obj_add_event_cb(ui_Image11, Curriculum_cd, LV_EVENT_ALL, NULL);
 
-    // //出厂程序时打开
+    // Open when burning the factory program
     //     ui_Label10 = lv_label_create(ui_TabPage2);
     //     lv_obj_set_width(ui_Label10, LV_SIZE_CONTENT);  /// 1
     //     lv_obj_set_height(ui_Label10, LV_SIZE_CONTENT); /// 1
